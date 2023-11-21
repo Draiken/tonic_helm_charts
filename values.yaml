@@ -35,9 +35,7 @@ numberOfWorkers: 1
 enableLogCollection: false
 
 # This value will be provided to you by Tonic and will allow you to authenticate against our private docker repository.
-dockerConfigAuth:
-  user: ${TONIC_DOCKER_USER}
-  password: ${TONIC_DOCKER_PASS}
+dockerConfigAuth: ${TONIC_DOCKER_CONFIG_JSON}
 
 # Service account for tonic
 serviceAccount:
