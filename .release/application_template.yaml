@@ -1,0 +1,38 @@
+---
+auto_deploy: true
+context: release-handsup-us-east-1
+domain: releaseapp.gethandsup.com
+repo_name: draiken/tonic_helm_charts
+environment_templates:
+  - name: ephemeral
+  - name: permanent
+charts:
+  - name: tonic
+    add: tonic
+    directory: "."
+    values:
+      - values.yaml
+resources:
+  cpu:
+    limits: 1000m
+    requests: 100m
+  memory:
+    limits: 1Gi
+    requests: 100Mi
+  replicas: 1
+workflows:
+  - name: setup
+    parallelize:
+      - step: tonic
+        tasks:
+          - charts.tonic
+  - name: patch
+    parallelize:
+      - step: tonic
+        tasks:
+          - charts.tonic
+  - name: teardown
+    parallelize:
+      - step: remove-environment
+        tasks:
+          - release.remove_environment
