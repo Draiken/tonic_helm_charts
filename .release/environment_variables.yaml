@@ -1,24 +1,28 @@
-# Docker credentials
-- key: TONIC_DOCKER_USER
-  value: $secrets.rsm.TONIC_DOCKER_USER
-  secret: true
-- key: TONIC_DOCKER_PASS
-  value: $secrets.rsm.TONIC_DOCKER_PASS
-  secret: true
+---
+defaults:
+  # Docker credentials
+  - key: TONIC_DOCKER_USER
+    value: $secrets.rsm.TONIC_DOCKER_USER
+    secret: true
+  - key: TONIC_DOCKER_PASS
+    value: $secrets.rsm.TONIC_DOCKER_PASS
+    secret: true
 
-# Database envs
-- key: TONIC_DB_PASS
-  value: $secrets.rsm.TONIC_DB_PASS
-  secret: true
-- key: TONIC_DB_HOST
-  value: $secrets.rsm.TONIC_DB_HOST
-  secret: true
-- key: TONIC_DB_USER
-  value: tonic
+  # Database envs
+  - key: TONIC_DB_PASS
+    value: $secrets.rsm.TONIC_DB_PASS
+    secret: true
+  - key: TONIC_DB_HOST
+    value: $secrets.rsm.TONIC_DB_HOST
+    secret: true
+  - key: TONIC_DB_USER
+    value: tonic
 
-# Admin emails. Comma separated
-- key: TONIC_ADMIN_EMAILS
-  value: $secrets.rsm.TONIC_ADMIN_EMAILS
+  # Admin emails. Comma separated
+  - key: TONIC_ADMIN_EMAILS
+    value: $secrets.rsm.TONIC_ADMIN_EMAILS
 
-- key: TONIC_ENV_NAME
-  value: tonic-luiz
+  - key: TONIC_ENV_NAME
+    value: tonic-luiz
+services: {}
+mapping: {}
