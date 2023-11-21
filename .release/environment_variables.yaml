@@ -23,6 +23,10 @@ defaults:
     value: $secrets.rsm.TONIC_ADMIN_EMAILS
 
   - key: TONIC_ENV_NAME
-    value: tonic-luiz
+    value: releasehub
+
+  - key: TONIC_LICENSE
+    value: $secrets.rsm.TONIC_LICENSE
+    secret: true
 services: {}
 mapping: {}
