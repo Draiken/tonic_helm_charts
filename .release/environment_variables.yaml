@@ -21,6 +21,7 @@ defaults:
   # Admin emails. Comma separated
   - key: TONIC_ADMIN_EMAILS
     value: $secrets.rsm.TONIC_ADMIN_EMAILS
+    secret: true
 
   - key: TONIC_ENV_NAME
     value: releasehub
