@@ -129,7 +129,7 @@ tonicai:
   # use_ingress typically only used by TIM
   use_ingress: true
   ingress:
-    #class: nginx
+    class: nginx
     host: tonic-luiz.releaseapp.gethandsup.com
     labels: {}
     # By default this chart will create an nginx ingress, however providing
