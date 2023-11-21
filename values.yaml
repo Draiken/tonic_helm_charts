@@ -127,14 +127,21 @@ tonicai:
     #   operator: "Exists"
     #   effect: "NoSchedule"
   # use_ingress typically only used by TIM
-  #use_ingress: true
-  #ingress:
-  #  class: nginx
-  #  host: null
-  #  labels: {}
-  # By default this chart will create an nginx ingress, however providing
-  # additional annotations will disable this
-  #  annotations: {}
+  use_ingress: true
+  ingress:
+    #class: nginx
+    host: tonic-luiz.releaseapp.gethandsup.com
+    labels: {}
+    # By default this chart will create an nginx ingress, however providing
+    # additional annotations will disable this
+    annotations:
+      nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+      nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+      nginx.ingress.kubernetes.io/service-upstream: "true"
+      nginx.ingress.kubernetes.io/default-backend: "tonic-web-server"
+      nginx.ingress.kubernetes.io/proxy-read-timeout: "3600" # 1 hour
+      nginx.ingress.kubernetes.io/proxy-send-timeout: "3600" # 1 hour
+      nginx.ingress.kubernetes.io/proxy-body-size: "0" # disable body size constraint
 
 # Deployment Strategy: This can be set to either "RollingUpdate" or "Recreate".  If not provided, the default value
 # is "RollingUpdate".  "RollingUpdate" will perform a rolling update of the deployment similar to a blue/green
