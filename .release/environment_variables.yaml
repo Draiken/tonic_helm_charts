@@ -16,7 +16,7 @@
 - key: TONIC_DB_USER
   value: tonic
 
-# Admin emails
+# Admin emails. Comma separated
 - key: TONIC_ADMIN_EMAILS
   value: $secrets.rsm.TONIC_ADMIN_EMAILS
 
