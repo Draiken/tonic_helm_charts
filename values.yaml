@@ -54,8 +54,7 @@ tonicai:
     # Comma separated list of user emails that should be have the Admin role in Tonic.
     administrators: ${TONIC_ADMIN_EMAILS}
     # annotations to apply to the service that routes traffic to the web server
-    #annotations:
-    #{}
+    annotations: {}
     # By default this chart will create an internal load balancer service on
     # EKS and AKS; however, providing additional annotations will disable this
     # If additional annotations are applied and you need a load balancer to
