@@ -1,11 +1,8 @@
 ---
 defaults:
   # Docker credentials
-  - key: TONIC_DOCKER_USER
-    value: $secrets.rsm.TONIC_DOCKER_USER
-    secret: true
-  - key: TONIC_DOCKER_PASS
-    value: $secrets.rsm.TONIC_DOCKER_PASS
+  - key: TONIC_DOCKER_CONFIG_JSON
+    value: $secrets.rsm.TONIC_DOCKER_CONFIG_JSON
     secret: true
 
   # Database envs
